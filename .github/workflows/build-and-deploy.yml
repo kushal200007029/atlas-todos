@@ -25,7 +25,8 @@ jobs:
           aws-region: ${{ env.AWS_REGION }}
       - uses: aws-actions/amazon-ecr-login@v2
       - name: Build and push images
-        env: { TAG: ${{ github.sha }} }
+        env:
+          TAG: ${{ github.sha }}
         run: |
           docker build -t "$ECR_API_REPOSITORY:$TAG" server
           docker build -t "$ECR_WEB_REPOSITORY:$TAG" client
@@ -33,7 +34,8 @@ jobs:
           docker push "$ECR_WEB_REPOSITORY:$TAG"
       - uses: mikefarah/yq@v4.44.3
       - name: Promote immutable images for Argo CD
-        env: { TAG: ${{ github.sha }} }
+        env:
+          TAG: ${{ github.sha }}
         run: |
           yq -i '(.images[] | select(.name == "TODO_API_IMAGE").newName) = strenv(ECR_API_REPOSITORY)' k8s/overlays/prod/kustomization.yaml
           yq -i '(.images[] | select(.name == "TODO_API_IMAGE").newTag) = strenv(TAG)' k8s/overlays/prod/kustomization.yaml
