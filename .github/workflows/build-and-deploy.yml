@@ -1,4 +1,5 @@
 name: Build and deploy
+# Builds immutable ECR images, then lets Argo CD reconcile the GitOps change.
 
 on:
   push:
