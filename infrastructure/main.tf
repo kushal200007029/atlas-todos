@@ -82,7 +82,7 @@ resource "aws_iam_role" "github_actions" {
 resource "aws_iam_role_policy" "github_ecr" {
   name   = "ecr-publish"
   role   = aws_iam_role.github_actions.id
-  policy = jsonencode({ Version = "2012-10-17", Statement = [{ Effect = "Allow", Action = ["ecr:GetAuthorizationToken"], Resource = "*" }, { Effect = "Allow", Action = ["ecr:BatchCheckLayerAvailability", "ecr:CompleteLayerUpload", "ecr:InitiateLayerUpload", "ecr:PutImage", "ecr:UploadLayerPart"], Resource = [aws_ecr_repository.api.arn, aws_ecr_repository.web.arn] }] })
+  policy = jsonencode({ Version = "2012-10-17", Statement = [{ Effect = "Allow", Action = ["ecr:GetAuthorizationToken"], Resource = "*" }, { Effect = "Allow", Action = ["ecr:BatchCheckLayerAvailability", "ecr:BatchGetImage", "ecr:CompleteLayerUpload", "ecr:InitiateLayerUpload", "ecr:PutImage", "ecr:UploadLayerPart"], Resource = [aws_ecr_repository.api.arn, aws_ecr_repository.web.arn] }] })
 }
 
 resource "aws_iam_role" "ansible" {
