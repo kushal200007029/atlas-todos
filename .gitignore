@@ -1,0 +1,12 @@
+node_modules/
+dist/
+.env
+.env.local
+server/.env
+server/node_modules_corrupt/
+server/server/
+client/.env
+.terraform/
+*.tfstate
+*.tfstate.*
+terraform.tfvars
