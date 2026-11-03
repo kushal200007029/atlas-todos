@@ -3,8 +3,8 @@ resources:
   - ../../base
 images:
   - name: TODO_API_IMAGE
-    newName: REPLACE_AT_DEPLOY_TIME/api
-    newTag: latest
+    newName: 258109618886.dkr.ecr.ap-south-1.amazonaws.com/atlas-todos/api
+    newTag: cd6e896596201c2fda7578deffe0fc8dfbefc546
   - name: TODO_WEB_IMAGE
-    newName: REPLACE_AT_DEPLOY_TIME/web
-    newTag: latest
+    newName: 258109618886.dkr.ecr.ap-south-1.amazonaws.com/atlas-todos/web
+    newTag: cd6e896596201c2fda7578deffe0fc8dfbefc546
