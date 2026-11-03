@@ -17,8 +17,10 @@ data "aws_ami" "ubuntu" {
 }
 
 locals {
-  name = "${var.project}-eks"
-  tags = { Project = var.project, ManagedBy = "Terraform" }
+  name         = "${var.project}-eks"
+  tags         = { Project = var.project, ManagedBy = "Terraform" }
+  github_owner = split("/", var.github_repository)[0]
+  github_repo  = split("/", var.github_repository)[1]
 }
 
 module "eks" {
@@ -74,7 +76,7 @@ resource "aws_iam_openid_connect_provider" "github" {
 }
 resource "aws_iam_role" "github_actions" {
   name               = "${var.project}-github-actions"
-  assume_role_policy = jsonencode({ Version = "2012-10-17", Statement = [{ Effect = "Allow", Action = "sts:AssumeRoleWithWebIdentity", Principal = { Federated = aws_iam_openid_connect_provider.github.arn }, Condition = { StringEquals = { "token.actions.githubusercontent.com:aud" = "sts.amazonaws.com" }, StringLike = { "token.actions.githubusercontent.com:sub" = "repo:${var.github_repository}:*" } } }] })
+  assume_role_policy = jsonencode({ Version = "2012-10-17", Statement = [{ Effect = "Allow", Action = "sts:AssumeRoleWithWebIdentity", Principal = { Federated = aws_iam_openid_connect_provider.github.arn }, Condition = { StringEquals = { "token.actions.githubusercontent.com:aud" = "sts.amazonaws.com" }, StringLike = { "token.actions.githubusercontent.com:sub" = "repo:${local.github_owner}@*/${local.github_repo}@*:ref:refs/heads/main" } } }] })
   tags               = local.tags
 }
 resource "aws_iam_role_policy" "github_ecr" {
