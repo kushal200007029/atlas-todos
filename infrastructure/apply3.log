@@ -1,0 +1,161 @@
+random_password.mongodb: Refreshing state... [id=none]
+data.aws_vpc.default: Reading...
+data.aws_ami.ubuntu: Reading...
+module.eks.data.aws_caller_identity.current[0]: Reading...
+module.eks.data.aws_partition.current[0]: Reading...
+module.eks.module.eks_managed_node_group["default"].data.aws_partition.current: Reading...
+module.eks.module.eks_managed_node_group["default"].data.aws_iam_policy_document.assume_role_policy[0]: Reading...
+aws_iam_openid_connect_provider.github: Refreshing state... [id=arn:aws:iam::258109618886:oidc-provider/token.actions.githubusercontent.com]
+module.eks.module.eks_managed_node_group["default"].data.aws_caller_identity.current: Reading...
+module.eks.aws_cloudwatch_log_group.this[0]: Refreshing state... [id=/aws/eks/atlas-todos-eks/cluster]
+aws_iam_role.ansible: Refreshing state... [id=atlas-todos-ansible-control]
+module.eks.data.aws_partition.current[0]: Read complete after 0s [id=aws]
+module.eks.module.eks_managed_node_group["default"].data.aws_partition.current: Read complete after 0s [id=aws]
+module.eks.module.eks_managed_node_group["default"].data.aws_iam_policy_document.assume_role_policy[0]: Read complete after 0s [id=2560088296]
+module.eks.module.kms.data.aws_partition.current[0]: Reading...
+module.eks.data.aws_iam_policy_document.assume_role_policy[0]: Reading...
+aws_ecr_repository.web: Refreshing state... [id=atlas-todos/web]
+module.eks.module.kms.data.aws_partition.current[0]: Read complete after 0s [id=aws]
+module.eks.data.aws_iam_policy_document.assume_role_policy[0]: Read complete after 0s [id=2830595799]
+aws_ecr_repository.api: Refreshing state... [id=atlas-todos/api]
+module.eks.module.kms.data.aws_caller_identity.current[0]: Reading...
+module.eks.data.aws_caller_identity.current[0]: Read complete after 0s [id=258109618886]
+module.eks.module.eks_managed_node_group["default"].aws_iam_role.this[0]: Refreshing state... [id=default-eks-node-group-20261103110344498100000005]
+module.eks.module.eks_managed_node_group["default"].data.aws_caller_identity.current: Read complete after 0s [id=258109618886]
+module.eks.aws_iam_role.this[0]: Refreshing state... [id=atlas-todos-eks-cluster-20261103110344498100000004]
+module.eks.module.kms.data.aws_caller_identity.current[0]: Read complete after 0s [id=258109618886]
+module.eks.data.aws_iam_session_context.current[0]: Reading...
+module.eks.data.aws_iam_session_context.current[0]: Read complete after 0s [id=arn:aws:iam::258109618886:root]
+module.eks.data.aws_iam_policy_document.custom[0]: Reading...
+module.eks.data.aws_iam_policy_document.custom[0]: Read complete after 0s [id=513122117]
+module.eks.aws_iam_policy.custom[0]: Refreshing state... [id=arn:aws:iam::258109618886:policy/atlas-todos-eks-cluster-20261103110344498100000001]
+data.aws_ami.ubuntu: Read complete after 1s [id=ami-082a1ff88c78c6290]
+data.aws_vpc.default: Read complete after 1s [id=vpc-05d888adf774aad42]
+data.aws_subnets.default: Reading...
+aws_security_group.ansible: Refreshing state... [id=sg-007737d08be4bf492]
+module.eks.aws_security_group.cluster[0]: Refreshing state... [id=sg-0be8d0c769396d626]
+module.eks.aws_security_group.node[0]: Refreshing state... [id=sg-05a064afbfd52eefc]
+data.aws_subnets.default: Read complete after 0s [id=ap-south-1]
+module.eks.aws_security_group_rule.node["ingress_cluster_8443_webhook"]: Refreshing state... [id=sgrule-2003282477]
+module.eks.aws_security_group_rule.node["ingress_nodes_ephemeral"]: Refreshing state... [id=sgrule-4111841263]
+module.eks.aws_security_group_rule.node["ingress_self_coredns_tcp"]: Refreshing state... [id=sgrule-4153201152]
+module.eks.aws_security_group_rule.node["ingress_cluster_6443_webhook"]: Refreshing state... [id=sgrule-1681626636]
+module.eks.aws_security_group_rule.node["ingress_cluster_9443_webhook"]: Refreshing state... [id=sgrule-331782630]
+module.eks.aws_security_group_rule.node["ingress_cluster_kubelet"]: Refreshing state... [id=sgrule-7421685]
+module.eks.aws_security_group_rule.node["egress_all"]: Refreshing state... [id=sgrule-1064981499]
+module.eks.aws_security_group_rule.node["ingress_cluster_443"]: Refreshing state... [id=sgrule-390997081]
+module.eks.aws_security_group_rule.node["ingress_cluster_4443_webhook"]: Refreshing state... [id=sgrule-2910450074]
+module.eks.aws_security_group_rule.node["ingress_self_coredns_udp"]: Refreshing state... [id=sgrule-1406366191]
+module.eks.aws_security_group_rule.cluster["ingress_nodes_443"]: Refreshing state... [id=sgrule-384943202]
+aws_iam_role.github_actions: Refreshing state... [id=atlas-todos-github-actions]
+aws_iam_role_policy_attachment.ansible_ssm: Refreshing state... [id=atlas-todos-ansible-control-20261103112209780000000001]
+aws_iam_instance_profile.ansible: Refreshing state... [id=atlas-todos-ansible-control]
+module.eks.aws_iam_role_policy_attachment.custom[0]: Refreshing state... [id=atlas-todos-eks-cluster-20261103110344498100000004-2026110311035025730000000b]
+module.eks.aws_iam_role_policy_attachment.this["AmazonEKSClusterPolicy"]: Refreshing state... [id=atlas-todos-eks-cluster-20261103110344498100000004-20261103110348698600000006]
+module.eks.aws_iam_role_policy_attachment.this["AmazonEKSVPCResourceController"]: Refreshing state... [id=atlas-todos-eks-cluster-20261103110344498100000004-20261103110349030300000007]
+module.eks.module.kms.data.aws_iam_policy_document.this[0]: Reading...
+module.eks.module.kms.data.aws_iam_policy_document.this[0]: Read complete after 0s [id=2350839956]
+module.eks.module.eks_managed_node_group["default"].aws_iam_role_policy_attachment.this["AmazonEKS_CNI_Policy"]: Refreshing state... [id=default-eks-node-group-20261103110344498100000005-2026110311034988930000000a]
+module.eks.module.eks_managed_node_group["default"].aws_iam_role_policy_attachment.this["AmazonEC2ContainerRegistryReadOnly"]: Refreshing state... [id=default-eks-node-group-20261103110344498100000005-20261103110349409000000008]
+module.eks.module.eks_managed_node_group["default"].aws_iam_role_policy_attachment.this["AmazonEKSWorkerNodePolicy"]: Refreshing state... [id=default-eks-node-group-20261103110344498100000005-20261103110349470400000009]
+module.eks.module.kms.aws_kms_key.this[0]: Refreshing state... [id=0f0338cd-efcd-471b-a638-4b806d1dd082]
+module.eks.module.kms.aws_kms_alias.this["cluster"]: Refreshing state... [id=alias/eks/atlas-todos-eks]
+module.eks.aws_iam_policy.cluster_encryption[0]: Refreshing state... [id=arn:aws:iam::258109618886:policy/atlas-todos-eks-cluster-ClusterEncryption2026110311041168240000000c]
+module.eks.aws_eks_cluster.this[0]: Refreshing state... [id=atlas-todos-eks]
+aws_instance.ansible: Refreshing state... [id=i-078581568a404fcbe]
+module.eks.aws_ec2_tag.cluster_primary_security_group["Project"]: Refreshing state... [id=sg-052ecda2859e694f8,Project]
+module.eks.aws_ec2_tag.cluster_primary_security_group["ManagedBy"]: Refreshing state... [id=sg-052ecda2859e694f8,ManagedBy]
+module.eks.data.aws_eks_addon_version.this["kube-proxy"]: Reading...
+module.eks.data.aws_eks_addon_version.this["coredns"]: Reading...
+module.eks.data.aws_eks_addon_version.this["vpc-cni"]: Reading...
+module.eks.aws_eks_access_entry.this["cluster_creator"]: Refreshing state... [id=atlas-todos-eks:arn:aws:iam::258109618886:root]
+module.eks.data.tls_certificate.this[0]: Reading...
+module.eks.time_sleep.this[0]: Refreshing state... [id=2026-11-03T11:13:19Z]
+aws_iam_role_policy.github_ecr: Refreshing state... [id=atlas-todos-github-actions:ecr-publish]
+module.eks.module.eks_managed_node_group["default"].module.user_data.null_resource.validate_cluster_service_cidr: Refreshing state... [id=7746973862308071935]
+module.eks.module.eks_managed_node_group["default"].aws_launch_template.this[0]: Refreshing state... [id=lt-0bcd494b5eaf2ac57]
+module.eks.data.aws_eks_addon_version.this["coredns"]: Read complete after 1s [id=coredns]
+module.eks.data.tls_certificate.this[0]: Read complete after 1s [id=1e3a331631939a1ae4a625cd4244a4963dabbfa2]
+module.eks.aws_iam_openid_connect_provider.oidc_provider[0]: Refreshing state... [id=arn:aws:iam::258109618886:oidc-provider/oidc.eks.ap-south-1.amazonaws.com/id/B8865DA26248794BBD77D1E33D3E52A8]
+module.eks.data.aws_eks_addon_version.this["kube-proxy"]: Read complete after 1s [id=kube-proxy]
+module.eks.data.aws_eks_addon_version.this["vpc-cni"]: Read complete after 1s [id=vpc-cni]
+module.eks.aws_eks_access_policy_association.this["cluster_creator_admin"]: Refreshing state... [id=atlas-todos-eks#arn:aws:iam::258109618886:root#arn:aws:eks::aws:cluster-access-policy/AmazonEKSClusterAdminPolicy]
+module.eks.module.eks_managed_node_group["default"].aws_eks_node_group.this[0]: Refreshing state... [id=atlas-todos-eks:default-20261103111449165900000001]
+module.eks.aws_iam_role_policy_attachment.cluster_encryption[0]: Refreshing state... [id=atlas-todos-eks-cluster-20261103110344498100000004-2026110311041328900000000d]
+module.eks.aws_eks_addon.this["coredns"]: Refreshing state... [id=atlas-todos-eks:coredns]
+module.eks.aws_eks_addon.this["kube-proxy"]: Refreshing state... [id=atlas-todos-eks:kube-proxy]
+module.eks.aws_eks_addon.this["vpc-cni"]: Refreshing state... [id=atlas-todos-eks:vpc-cni]
+data.aws_eks_cluster_auth.this: Reading...
+data.aws_eks_cluster_auth.this: Read complete after 0s [id=atlas-todos-eks]
+helm_release.argocd: Refreshing state... [id=argocd]
+
+Terraform used the selected providers to generate the following execution
+plan. Resource actions are indicated with the following symbols:
+  + create
+
+Terraform will perform the following actions:
+
+  # helm_release.mongodb will be created
+  + resource "helm_release" "mongodb" {
+      + atomic                     = false
+      + chart                      = "mongodb"
+      + cleanup_on_fail            = false
+      + create_namespace           = true
+      + dependency_update          = false
+      + disable_crd_hooks          = false
+      + disable_openapi_validation = false
+      + disable_webhooks           = false
+      + force_update               = false
+      + id                         = (known after apply)
+      + lint                       = false
+      + manifest                   = (known after apply)
+      + max_history                = 0
+      + metadata                   = (known after apply)
+      + name                       = "mongodb"
+      + namespace                  = "todo"
+      + pass_credentials           = false
+      + recreate_pods              = false
+      + render_subchart_notes      = true
+      + replace                    = false
+      + repository                 = "https://charts.bitnami.com/bitnami"
+      + reset_values               = false
+      + reuse_values               = false
+      + skip_crds                  = false
+      + status                     = "deployed"
+      + timeout                    = 300
+      + verify                     = false
+      + version                    = "20.0.16"
+      + wait                       = true
+      + wait_for_jobs              = false
+
+      + set {
+          + name  = "architecture"
+          + value = "standalone"
+            # (1 unchanged attribute hidden)
+        }
+      + set {
+          + name  = "auth.databases[0]"
+          + value = "todo"
+            # (1 unchanged attribute hidden)
+        }
+      + set {
+          + name  = "auth.usernames[0]"
+          + value = "todo"
+            # (1 unchanged attribute hidden)
+        }
+      + set {
+          + name  = "persistence.size"
+          + value = "8Gi"
+            # (1 unchanged attribute hidden)
+        }
+
+      + set_sensitive {
+          # At least one attribute in this block is (or was) sensitive,
+          # so its contents will not be displayed.
+        }
+    }
+
+Plan: 1 to add, 0 to change, 0 to destroy.
+helm_release.mongodb: Creating...
+helm_release.mongodb: Still creating... [00m10s elapsed]
+helm_release.mongodb: Still creating... [00m20s elapsed]

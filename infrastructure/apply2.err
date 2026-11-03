@@ -1,0 +1,7 @@
+
+Error: could not download chart: invalid_reference: invalid tag
+
+  with helm_release.mongodb,
+  on main.tf line 144, in resource "helm_release" "mongodb":
+ 144: resource "helm_release" "mongodb" {
+

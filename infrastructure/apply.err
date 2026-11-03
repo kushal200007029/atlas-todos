@@ -1,0 +1,8 @@
+
+Error: API did not recognize GroupVersionKind from manifest (CRD may not be installed)
+
+  with kubernetes_manifest.todo_argocd_application,
+  on main.tf line 173, in resource "kubernetes_manifest" "todo_argocd_application":
+ 173: resource "kubernetes_manifest" "todo_argocd_application" {
+
+no matches for kind "Application" in group "argoproj.io"

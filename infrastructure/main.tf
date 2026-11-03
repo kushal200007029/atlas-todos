@@ -28,11 +28,27 @@ module "eks" {
   cluster_version                          = var.cluster_version
   cluster_endpoint_public_access           = true
   enable_cluster_creator_admin_permissions = true
-  cluster_addons                           = { coredns = {}, "kube-proxy" = {}, "vpc-cni" = {} }
-  vpc_id                                   = data.aws_vpc.default.id
-  subnet_ids                               = slice(data.aws_subnets.default.ids, 0, 3)
-  eks_managed_node_groups                  = { default = { instance_types = ["t3.medium"], min_size = 2, max_size = 4, desired_size = 2 } }
-  tags                                     = local.tags
+  cluster_addons = {
+    coredns              = {}
+    "kube-proxy"         = {}
+    "vpc-cni"            = {}
+    "aws-ebs-csi-driver" = {}
+  }
+  vpc_id     = data.aws_vpc.default.id
+  subnet_ids = slice(data.aws_subnets.default.ids, 0, 3)
+  eks_managed_node_groups = {
+    default = {
+      ami_type       = "AL2023_x86_64_STANDARD"
+      instance_types = ["t3.medium"]
+      min_size       = 2
+      max_size       = 4
+      desired_size   = 2
+      iam_role_additional_policies = {
+        ebs_csi = "arn:aws:iam::aws:policy/service-role/AmazonEBSCSIDriverPolicy"
+      }
+    }
+  }
+  tags = local.tags
 }
 
 resource "aws_ecr_repository" "api" {
@@ -133,13 +149,32 @@ resource "helm_release" "argocd" {
   }
   depends_on = [module.eks]
 }
+
+resource "kubernetes_storage_class_v1" "gp3" {
+  metadata {
+    name = "gp3"
+    annotations = {
+      "storageclass.kubernetes.io/is-default-class" = "true"
+    }
+  }
+  storage_provisioner    = "ebs.csi.aws.com"
+  reclaim_policy         = "Delete"
+  volume_binding_mode    = "WaitForFirstConsumer"
+  allow_volume_expansion = true
+  parameters = {
+    type   = "gp3"
+    fsType = "ext4"
+  }
+  depends_on = [module.eks]
+}
+
 resource "helm_release" "mongodb" {
   name             = "mongodb"
-  repository       = "https://charts.bitnami.com/bitnami"
+  repository       = "oci://registry-1.docker.io/bitnamicharts"
   chart            = "mongodb"
   namespace        = "todo"
   create_namespace = true
-  version          = "16.4.3"
+  version          = "20.0.16"
   set {
     name  = "architecture"
     value = "standalone"
@@ -160,9 +195,5 @@ resource "helm_release" "mongodb" {
     name  = "persistence.size"
     value = "8Gi"
   }
-  depends_on = [module.eks]
-}
-resource "kubernetes_manifest" "todo_argocd_application" {
-  manifest   = yamldecode(templatefile("${path.module}/templates/argocd-application.yaml.tftpl", { repo_url = var.gitops_repo_url, revision = var.gitops_revision }))
-  depends_on = [helm_release.argocd]
+  depends_on = [kubernetes_storage_class_v1.gp3]
 }
